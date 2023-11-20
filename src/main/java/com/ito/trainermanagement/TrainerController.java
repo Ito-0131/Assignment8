@@ -21,7 +21,7 @@ public class TrainerController {
     public List<Trainer> findByNames(@RequestParam String startingWith) {
         List<Trainer> trainers = trainerMapper.findByNameStartingWith(startingWith);
         if (trainers.isEmpty()) {
-            throw new TrainerNotFoundException(startingWith + "で始まる名前のトレーナーはいません");
+            throw new TrainerNotFoundException(startingWith + "で始まる名前のトレーナーは存在していません");
         }
         return trainers;
     }
